@@ -1,9 +1,3 @@
-## Installation
-1. Clone this repo: `git clone https://github.com/giacomocerquone/angular2-mean-starter.git`
-2. `cd` into the folder of the repo you just cloned
-3. Install npm dependencies `npm install`
-4. Start a MongoDB instance
-5. You're ready to go, give `npm run start` to test the application
 
 ## Built-in scripts
 + `npm start` - Launch development server of Angular Cli and server.js node app through nodemon for live restart
@@ -22,7 +16,5 @@
 #### Development modules
 + Nodemon for live server restart
 + Concurrently for running and handling multiple npm packages
-+ Morgan as logging library
-
 
 

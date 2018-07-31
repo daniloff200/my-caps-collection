@@ -1,85 +1,60 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "version": "1.0.0",
-    "name": "tdp-candidates"
+    "name": "angular4-mean-starter"
   },
-  "apps": [
-    {
-      "root": "demo/src",
-      "outDir": "demo/dist",
-      "assets": [
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.json",
-      "testTsconfig": "../../src/tsconfig.spec.json",
-      "polyfills": "polyfills.ts",
-      "prefix": "tdp",
-      "mobile": false,
-      "styles": [
-      ],
-      "scripts": [
-      ],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
+  "apps": [{
+    "root": "public/src",
+    "outDir": "public/dist",
+    "assets": [
+      "assets",
+      "favicon.ico"
+    ],
+    "index": "index.html",
+    "main": "main.ts",
+    "polyfills": "polyfills.ts",
+    "test": "test.ts",
+    "tsconfig": "tsconfig.app.json",
+    "testTsconfig": "tsconfig.spec.json",
+    "prefix": "app",
+    "styles": [
+      "styles.css"
+    ],
+    "scripts": [],
+    "environmentSource": "environments/environment.ts",
+    "environments": {
+      "dev": "environments/environment.ts",
+      "prod": "environments/environment.prod.ts"
     }
-  ],
-  "addons": [],
-  "packages": [],
+  }],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
     }
   },
-  "lint": [
+  "lint": [{
+    "project": "src/tsconfig.app.json",
+    "exclude": "**/node_modules/**"
+  },
     {
-      "files": "src/**/*.ts",
-      "project": "src/tsconfig.spec.json"
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
     },
     {
-      "files": "src/**/*.ts",
-      "project": "src/tsconfig.json"
-    },
-    {
-      "files": "e2e/**/*.ts",
-      "project": "e2e/tsconfig.e2e.json"
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
     }
   ],
-  "polyfills": "polyfills.ts",
   "test": {
-    "codeCoverage": {
-      "exclude": [
-        "**/polyfills.ts",
-        "**/test.ts",
-        "**/*.mock.ts",
-        "**/*.sample.ts",
-        "**/testing/*/*.ts",
-        "**/testing/*.ts",
-        "**/index.ts"
-      ]
-    },
     "karma": {
       "config": "./karma.conf.js"
     }
   },
   "defaults": {
-    "styleExt": "scss",
-    "prefixInterfaces": true,
-    "inline": {
-      "style": false,
-      "template": false
-    },
-    "spec": {
-      "class": false,
-      "component": true,
-      "directive": true,
-      "module": false,
-      "pipe": true,
-      "service": true
+    "styleExt": "css",
+    "component": {},
+    "serve": {
+      "port": 4200
     }
   }
 }
