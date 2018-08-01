@@ -7,7 +7,7 @@
   "author": "Dmitry Danilov (daniloff200@gmail.com)",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently   \"ng build --prod\" \"node server.js\"",
+    "start": "concurrently   \"ng build --prod\" \"nodemon server.js\"",
     "heroku-server": "node server.js",
     "heroku-front": "ng serve --progress=false --no-aot",
     "start-locally": "concurrently  \"node server.js\" \"ng serve --progress=false --no-aot --proxy-config proxy.conf.json\"",
