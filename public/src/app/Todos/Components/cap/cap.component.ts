@@ -12,8 +12,8 @@ import { Cap } from '../../Model/cap';
   styleUrls: ['./cap.component.css']
 })
 export class CapComponent implements OnInit {
-  private capId: string;
-  private  cap: Cap;
+  public capId: string;
+  public  cap: Cap;
 
   constructor(private _dataService: DataService,  private router: Router, private activatedRoute: ActivatedRoute) {}
 

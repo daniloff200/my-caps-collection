@@ -5,6 +5,7 @@
 /tmp
 .tmp
 /demo/dist
+/public/dist
 
 # dependencies
 /node_modules
