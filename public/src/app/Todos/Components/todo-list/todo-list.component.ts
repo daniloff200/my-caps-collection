@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 // Import the DataService
 import { DataService } from './../../Services/data.service';
+import { Cap } from '../../Model/cap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'todo-list',
@@ -10,20 +12,24 @@ import { DataService } from './../../Services/data.service';
 })
 export class TodoListComponent implements OnInit {
 
-  todos: Array<Object> = [];
-  private todo: Object = {};
+  caps: Array<Cap> = [];
+  private cap: Cap  ;
 
-  constructor(private _dataService: DataService) {
+  constructor(private _dataService: DataService,  private router: Router) {
     this._dataService.getTodos()
-      .subscribe(res => this.todos = res);
+      .subscribe(res => this.caps = res);
   }
 
   ngOnInit() {}
 
-  onTodoDelete(todoId: String) {
+  goToCapPage(cap) {
+    this.router.navigate(['/cap', cap.myUniqueID]);
+  }
+
+  onTodoDelete(todoId: string) {
     this._dataService.deleteTodo(todoId)
       .subscribe(res => {
-        this.todos = this.todos.filter( (todo: any) => {
+        this.caps = this.caps.filter( (todo: any) => {
           return todo._id != todoId;
         });
         console.log(res)

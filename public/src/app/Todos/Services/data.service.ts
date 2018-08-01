@@ -11,7 +11,7 @@ export class DataService {
   constructor(private _http: Http) { }
 
   getTodos() {
-    return this._http.get('/api/v1/todos')
+    return this._http.get('/api/v1/caps')
       .map(result => result.json().data);
   }
 
@@ -20,7 +20,9 @@ export class DataService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this._http.post('/api/v1/todo', body, options)
+    console.log(body)
+
+    return this._http.post('/api/v1/cap', body, options)
       .map((res: Response) => res.json());
   }
 
@@ -28,7 +30,15 @@ export class DataService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this._http.delete('/api/v1/todo/'+todoId, options)
+    return this._http.delete('/api/v1/cap/'+todoId, options)
+      .map((res: Response) => res.json());
+  }
+
+  getCap(capId) {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this._http.get('/api/v1/cap/'+capId, options)
       .map((res: Response) => res.json());
   }
 

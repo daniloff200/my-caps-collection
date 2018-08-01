@@ -1,13 +1,25 @@
-<h1 class="mat-display-1" style="margin-top:2em; text-align:center;">Create a Todo</h1>
+<h1 class="mat-display-1" style="margin-top:2em; text-align:center;">Add new cap</h1>
 
 <mat-card>
   <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
     <mat-form-field class="example-full-width">
-      <input matInput [(ngModel)]="todo.title" name="title" placeholder="Todo's title">
+      <input matInput [(ngModel)]="cap.name" name="title" placeholder="Cap name">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput [(ngModel)]="todo.text" name="text" placeholder="Todo's text" />
+      <input matInput [(ngModel)]="cap.text" name="text" placeholder="Some text" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="cap.brewery" name="brewery" placeholder="Brewery" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="cap.country" name="country" placeholder="Country" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="cap.myUniqueID" name="uniqueid" placeholder="unique number" />
     </mat-form-field>
 
     <mat-card-actions>

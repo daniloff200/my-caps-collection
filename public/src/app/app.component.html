@@ -1,17 +1,17 @@
 <mat-toolbar color="primary" id="toolbar">
   <div class="left">
-    <span id="title">Test App - </span>
+    <span id="title">Beer caps app </span>
   </div>
 
   <button id="menu" mat-button [matMenuTriggerFor]="menu">Menu</button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/create">
       <mat-icon>note_add</mat-icon>
-      <span>Create Todo</span>
+      <span>Create new cap</span>
     </button>
     <button mat-menu-item routerLink="">
       <mat-icon>view_headline</mat-icon>
-      <span>Read Todos</span>
+      <span>Get all caps</span>
     </button>
   </mat-menu>
 </mat-toolbar>

@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 // Import the DataService
 import { DataService } from './../../Services/data.service';
 
-import { Todo } from './../../Model/Todo';
+import { Cap } from './../../Model/cap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'todo-form',
@@ -12,21 +13,25 @@ import { Todo } from './../../Model/Todo';
 })
 export class TodoFormComponent implements OnInit {
 
-  todos: Array<Todo> = [];
-  todo: Todo = {
-    title: '',
-    text: ''
+  caps: Array<Cap> = [];
+  cap: Cap = {
+    name: '',
+    text: '',
+    brewery: '',
+    country: '',
+    image: '',
+    myUniqueID: 0
   };
 
   result = '';
 
-  constructor(private _dataService: DataService) {
+  constructor(private _dataService: DataService,  private router: Router) {
     this._dataService.getTodos()
-      .subscribe(res => this.todos = res);
+      .subscribe(res => this.caps = res);
   }
 
   onSubmit() {
-    this._dataService.createTodo(this.todo)
+    this._dataService.createTodo(this.cap)
       .subscribe(res => {
         this.result = res.data;
         console.log(res)

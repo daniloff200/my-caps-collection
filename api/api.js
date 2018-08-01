@@ -1,10 +1,11 @@
 const express = require('express');
 
-const todoController = require('../controllers/todos');
+const capController = require('../controllers/caps');
 const router = express.Router();
 
-router.post('/todo', todoController.createTodo);
-router.get('/todos', todoController.getTodos);
-router.delete('/todo/:todoid', todoController.deleteTodo);
+router.post('/cap', capController.addNew);
+router.get('/caps', capController.getCaps);
+router.delete('/cap/:capid', capController.deleteCap);
+router.get('/cap/:capid', capController.getCapById);
 
 module.exports = router;

@@ -15,12 +15,14 @@ import { AppRoutes } from './app.routes';
 import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatMenuModule, MatIconModule } from '@angular/material';
 import { TodoFormComponent } from './Todos/Components/todo-form/todo-form.component';
 import { TodoListComponent } from './Todos/Components/todo-list/todo-list.component';
+import { CapComponent } from './Todos/Components/cap/cap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoFormComponent,
-    TodoListComponent
+    TodoListComponent,
+    CapComponent
   ],
   imports: [
     BrowserModule,
